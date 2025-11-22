@@ -1,0 +1,173 @@
+/* =============================
+   Animated Navbar - TripWaale.com
+============================= */
+
+/* Navbar container */
+.navbar {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: linear-gradient(90deg, #0077b6, #0096c7, #00b4d8);
+  background-size: 300% 300%;
+  animation: gradientFlow 8s ease infinite;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+/* Inner container */
+.navbarInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Brand logo */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.brand span {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: white;
+  margin-left: 8px;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  animation: fadeIn 1s ease-in;
+}
+
+.brand:hover {
+  transform: scale(1.05);
+  color: #caf0f8;
+}
+
+/* Desktop nav links */
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.navLinks a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Underline hover animation */
+.navLinks a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #90e0ef;
+  transition: width 0.3s ease;
+}
+
+.navLinks a:hover {
+  color: #90e0ef;
+}
+
+.navLinks a:hover::after {
+  width: 100%;
+}
+
+/* Sign-in button */
+.btnPrimary {
+  background-color: #90e0ef;
+  color: #023e8a;
+  padding: 6px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btnPrimary:hover {
+  background-color: #caf0f8;
+  transform: scale(1.08);
+}
+
+/* Mobile hamburger */
+.menuToggle {
+  background: none;
+  border: none;
+  color: white;
+  display: none;
+  cursor: pointer;
+}
+
+/* Mobile menu */
+.mobileMenu {
+  display: none;
+  flex-direction: column;
+  gap: 18px;
+  background-color: rgba(0, 60, 100, 0.95);
+  padding: 20px 24px;
+  backdrop-filter: blur(6px);
+  animation: slideDown 0.4s ease;
+}
+
+.mobileMenu a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navLinks {
+    display: none;
+  }
+
+  .menuToggle {
+    display: block;
+  }
+
+  .mobileMenu {
+    display: flex;
+  }
+}
+
+/* ============= Animations ============= */
+
+/* Flowing background animation */
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Mobile slide-down menu animation */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

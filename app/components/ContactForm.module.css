@@ -1,0 +1,91 @@
+.contactContainer {
+  max-width: 500px;
+  margin: 60px auto;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 0.6s ease;
+}
+
+.contactTitle {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #023e8a;
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.inputField,
+.textareaField {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: 0.3s ease;
+}
+
+.inputField:focus,
+.textareaField:focus {
+  border-color: #0077b6;
+  box-shadow: 0 0 0 3px rgba(0, 119, 182, 0.2);
+  outline: none;
+}
+
+.textareaField {
+  min-height: 100px;
+  resize: none;
+}
+
+.submitButton {
+  width: 100%;
+  background: linear-gradient(90deg, #00b4d8, #0077b6);
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.submitButton:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(90deg, #0096c7, #005f8c);
+}
+
+.statusMessage {
+  text-align: center;
+  margin-top: 15px;
+  color: #1d4ed8;
+  font-weight: 500;
+  animation: fadeIn 0.5s ease;
+}
+
+/* ✨ Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

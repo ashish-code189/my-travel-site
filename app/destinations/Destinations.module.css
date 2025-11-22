@@ -1,0 +1,198 @@
+/* ANIMATED BACKGROUND – SUPER VISIBLE */
+.container {
+  padding: 36px 20px;
+  font-family: Inter, system-ui, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  background: linear-gradient(120deg, #dfe9ff, #ffffff, #dde7ff);
+  background-size: 300% 300%;
+  animation: smoothBG 8s infinite alternate ease-in-out;
+}
+
+@keyframes smoothBG {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 100%; }
+}
+
+.heading {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+/* CONTROLS */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.searchInput,
+.select {
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid #d0d0d0;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+}
+
+/* GRID (GLASS EFFECT) */
+.grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+
+  background: rgba(255,255,255,0.4);
+  padding: 20px;
+  border-radius: 20px;
+  backdrop-filter: blur(18px);
+}
+
+/* CARD WITH NEON GLOW */
+.card {
+  background: rgba(255,255,255,0.75);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  transition: all .25s ease;
+  border: 2px solid transparent;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  border-color: #6a8bff;
+
+  box-shadow: 0 0 22px #8cabff, 
+              0 0 32px rgba(120,150,255,0.7);
+}
+
+/* IMAGE */
+.image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* CONTENT */
+.cardContent {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.description {
+  color: #666;
+  font-size: 14px;
+}
+
+/* BUTTONS (RIPPLE EFFECT) */
+.cardButtons {
+  margin-top: auto;
+  display: flex;
+  gap: 10px;
+}
+
+.viewBtn,
+.bookBtn {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ripple */
+.viewBtn::after,
+.bookBtn::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  background: rgba(255,255,255,0.5);
+  border-radius: 50%;
+  transform: scale(0);
+  transition: all 0.4s ease;
+}
+
+.viewBtn:hover::after,
+.bookBtn:hover::after {
+  width: 250px;
+  height: 250px;
+  transform: scale(1);
+}
+
+/* Specific Button Styles */
+.viewBtn {
+  border: 1px solid #333;
+  background: white;
+}
+
+.bookBtn {
+  background: #0d6efd;
+  color: white;
+  border: none;
+}
+
+/* PAGINATION */
+.pagination {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 22px;
+}
+
+.pageBtn {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #d0d0d0;
+  background: white;
+}
+
+.pageBtn:disabled {
+  opacity: 0.4;
+}
+
+.activePage {
+  background: #111;
+  color: white;
+}
+
+/* DETAILS PAGE */
+.detailsPage {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 980px;
+  margin: 28px auto;
+}
+
+.detailsImage {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.detailsContent {
+  background: white;
+  padding: 18px;
+  border-radius: 12px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 520px) {
+  .image { height: 160px; }
+  .cardButtons { flex-direction: column; }
+}

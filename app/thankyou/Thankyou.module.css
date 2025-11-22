@@ -1,0 +1,38 @@
+/* app/thankyou/Thankyou.module.css */
+
+.wrapper {
+  max-width: 600px;
+  margin: 80px auto;
+  text-align: center;
+  background: #f9f9f9;
+  border-radius: 16px;
+  padding: 50px 30px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper h1 {
+  color: #0d6efd;
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.wrapper p {
+  color: #444;
+  font-size: 1rem;
+  margin-bottom: 25px;
+}
+
+.wrapper button {
+  padding: 10px 20px;
+  background: #0d6efd;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.wrapper button:hover {
+  background: #094db3;
+}
