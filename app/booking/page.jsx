@@ -1,4 +1,5 @@
 "use client";
+export const dynamic = "force-dynamic";
 import styles from "./Booking.module.css";
 import { useSearchParams, useRouter } from "next/navigation";
 import { useState } from "react";
