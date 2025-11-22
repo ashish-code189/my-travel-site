@@ -1,5 +1,6 @@
 import { connectToDB } from "@/app/lib/mongodb";
 import Booking from "@/app/lib/bookingModel";
+export const dynamic = "force-dynamic";
 
 export async function POST(req) {
   try {

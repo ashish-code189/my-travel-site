@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 
 export async function POST(req) {
     const { password } = await req.json();

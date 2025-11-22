@@ -1,6 +1,7 @@
 // app/api/messages/[id]/route.js
 import clientPromise from "@/app/lib/mongodb";
 import { ObjectId } from "mongodb";
+export const dynamic = "force-dynamic";
 
 export async function DELETE(req, { params }) {
   try {
