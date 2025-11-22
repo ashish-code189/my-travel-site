@@ -14,11 +14,10 @@ export default function Destinations() {
     <section className={styles.destinations}>
       <h2 className={styles.title}>Popular Destinations</h2>
 
-      {/* DUPLICATE LIST FOR SMOOTH LOOP */}
-      <div className={styles.carouselTrack}>
-        {[...destinations, ...destinations].map((place, index) => (
+      <div className={styles.grid}>
+        {destinations.map((place) => (
           <div
-            key={index}
+            key={place.id}
             className={styles.card}
             onClick={() => (window.location.href = "/destinations")}
           >

@@ -3,43 +3,50 @@
   text-align: center;
 }
 
+/* Title animation */
 .title {
   color: #00b4d8;
-  animation: glow 2s infinite alternate;
   font-size: 2.3rem;
   font-weight: bold;
   margin-bottom: 25px;
+  animation: glow 2s infinite alternate;
 }
 
-/* MAIN TRACK FOR INFINITE SLIDER */
-.carouselTrack {
-  display: flex;
+@keyframes glow {
+  from { text-shadow: 0 0 10px #00b4d8; }
+  to   { text-shadow: 0 0 20px #0096c7; }
+}
+
+/* MAIN GRID (Carousel Removed) */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* Laptop → 5 per row */
   gap: 20px;
-  overflow: hidden;
-  width: 100%;
-  animation: scroll 25s linear infinite;
+  padding: 0 20px;
 }
 
-/* PERFECT SMOOTH SLIDE */
-@keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
+/* Cards */
 .card {
-  min-width: 260px;
-  max-width: 260px;
   background: white;
-  border-radius: 12px;
+  border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  transition: transform 0.4s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.20);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
+  opacity: 0;
+  animation: fadeIn 0.7s forwards;
 }
 
 .card:hover {
-  transform: scale(1.07);
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.35);
 }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 
 .image {
   width: 100%;
@@ -62,12 +69,21 @@
   color: #555;
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .card {
-    min-width: 70%;
+/* RESPONSIVE BREAKPOINTS */
+
+/* Tablet */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr); /* Tablet → 3 per row */
   }
-  .carouselTrack {
-    animation: scroll 18s linear infinite;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(1, 1fr); /* Mobile → 1 per row */
+  }
+  .image {
+    height: 200px;
   }
 }
