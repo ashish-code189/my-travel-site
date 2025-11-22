@@ -1,7 +1,7 @@
+export const dynamic = "force-dynamic";
 import { NextResponse } from "next/server";
 import { connectToDB } from "@/app/lib/mongodb";
 import Booking from "@/app/lib/bookingModel";
-export const dynamic = "force-dynamic";
 
 // GET SINGLE BOOKING
 export async function GET(req, context) {
