@@ -1,5 +1,8 @@
 "use client";
 export const dynamic = "force-dynamic";
+export const fetchCache = "force-no-store";
+export const revalidate = 0;
+
 import styles from "./Booking.module.css";
 import { useSearchParams, useRouter } from "next/navigation";
 import { useState } from "react";
