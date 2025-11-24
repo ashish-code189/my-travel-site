@@ -14,6 +14,7 @@ export default function Hero() {
         loop
         muted
         playsInline
+        poster="/images/beach-fallback.jpg" 
       >
         <source src="/videos/beach.mp4" type="video/mp4" />
       </video>

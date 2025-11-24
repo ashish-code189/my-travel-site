@@ -4,8 +4,6 @@ out/
 .env
 .env.local
 .env.*.local
-public/videos/
-public/uploads/
 *.zip
 *.tar.gz
 *.rar

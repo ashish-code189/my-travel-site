@@ -5,6 +5,7 @@
   overflow: hidden;
 }
 
+/* Background Video */
 .videoBackground {
   position: absolute;
   top: 0;
@@ -16,6 +17,7 @@
   filter: brightness(70%);
 }
 
+/* Content Overlay */
 .overlay {
   position: relative;
   z-index: 1;
@@ -26,10 +28,12 @@
   height: 100%;
   color: #fff;
   text-align: center;
+  padding: 0 20px;
   background: rgba(0, 0, 0, 0.3);
   animation: fadeIn 1.5s ease-in-out;
 }
 
+/* Title */
 .title {
   font-size: 3.5rem;
   font-weight: 700;
@@ -42,6 +46,7 @@
   animation: glow 2s infinite alternate;
 }
 
+/* Subtitle */
 .subtitle {
   font-size: 1.5rem;
   margin-bottom: 2rem;
@@ -50,6 +55,7 @@
   animation: slideUp 1.5s ease-out;
 }
 
+/* CTA Button */
 .ctaButton {
   background: linear-gradient(90deg, #00b4d8, #0077b6);
   color: #fff;
@@ -66,7 +72,60 @@
   background: linear-gradient(90deg, #0077b6, #00b4d8);
 }
 
-/* Animations */
+/* -------------------------------------- */
+/*       RESPONSIVENESS STARTS HERE       */
+/* -------------------------------------- */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .title {
+    font-size: 2.8rem;
+  }
+  .subtitle {
+    font-size: 1.2rem;
+    max-width: 500px;
+  }
+  .ctaButton {
+    font-size: 1rem;
+    padding: 0.8rem 1.8rem;
+  }
+}
+
+/* Mobile Large */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.2rem;
+  }
+  .subtitle {
+    font-size: 1.1rem;
+  }
+}
+
+/* Mobile Small */
+@media (max-width: 480px) {
+  .hero {
+    height: 85vh;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .ctaButton {
+    font-size: 0.9rem;
+    padding: 0.7rem 1.5rem;
+  }
+}
+
+/* -------------------------------------- */
+/*                Animations              */
+/* -------------------------------------- */
+
 @keyframes glow {
   from { text-shadow: 0 0 5px #00b4d8; }
   to { text-shadow: 0 0 20px #90e0ef; }
