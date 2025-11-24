@@ -10,12 +10,13 @@ export default function Hero() {
     <section className={styles.hero}>
       <video
         className={styles.videoBackground}
-        src="/videos/beach.mp4"
         autoPlay
         loop
         muted
         playsInline
-      />
+      >
+        <source src="/videos/beach.mp4" type="video/mp4" />
+      </video>
 
       <div className={styles.overlay}>
         <h1 className={styles.title}>
